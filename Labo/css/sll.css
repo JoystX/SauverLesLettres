@@ -1,0 +1,139 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background-color: #ddd;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+/* ~~ Sélecteurs d'éléments/balises ~~ */
+ul, ol, dl { */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+a img { 
+	border: none;
+}
+
+a:link {
+	color:#414958;
+	text-decoration: underline;
+}
+a:visited {
+	color: #4E5869;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* navigation clavier */
+	text-decoration: none;
+}
+
+.container {
+	width: 80%;
+	max-width: 1260px;
+	min-width: 780px;
+	background-color: #FFF;
+	margin: 0 auto; /* Centrer */
+}
+
+.header {
+	background-color: #FFFFFF;
+	text-align:center;
+}
+
+.sidebar1 {
+	float: right;
+	width: 350px;
+	padding-bottom: 10px;
+}
+
+.content {
+	padding: 10px 0;
+	width: 80%;
+		float: right;
+}
+
+/* ~~ Ce sélecteur groupé donne de l'espace aux listes dans la zone .content ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px;
+}
+
+
+/* ~~ Pied de page ~~ */
+footer {
+    margin: 50px 0;
+}
+
+.footer {
+	padding: 10px 0;
+	background-color: #6F7D94;
+	position: relative;/* donne hasLayout à IE6 de façon à permettre un effacement correct */
+	clear: both;
+}
+
+/* ~~ classes flottant/effacement diverses ~~ */
+.fltrt {
+	float: right;
+	margin-left: 8px;
+}
+.fltlft {
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat {
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+
+
+
+/* Menu Rouge */
+
+#nav{
+	position:relative; 
+	margin:40px; 
+	background:#eee; 
+	padding:0; 
+	font-family:'Lobster', Arial, Helvetica, sans-serif; 
+	font-size:21px; 
+	-moz-border-radius:5px;
+	-khtml-border-radius:5px; 
+	-webkit-border-radius:5px; 
+	border-radius:5px; 
+	-moz-box-shadow:2px 2px 3px #ccc; 
+	-webkit-box-shadow:2px 2px 3px #ccc; 
+	box-shadow:2px 2px 3px #ccc;
+}
+#nav .clear{clear:both;}
+#nav ul{
+	padding:0 0 0 5px; margin:0; list-style:none;
+}
+#nav li{
+	float:left; 
+	margin:5px 10px 5px 0; 
+	background:#eee; 
+	-moz-border-radius:5px; 
+	-khtml-border-radius:5px; 
+	-webkit-border-radius:5px; 
+	border-radius:5px;
+	display: inline;
+	list-style: none; /* nécessaire pour IE7 */
+}
+#nav li a{
+	text-decoration:none;
+	color:#9e0039;
+	display:block;
+	padding:10px 15px;
+}
+
+
+
