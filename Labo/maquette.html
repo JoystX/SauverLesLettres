@@ -1,0 +1,350 @@
+<!doctype html>
+<html><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+<title>Sauver Les Lettres</title>
+ <link href="css/bootstrap.css" rel="stylesheet">
+ 
+<style type="text/css">
+<!--
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background-color: #ddd;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+/* ~~ Sélecteurs d'éléments/balises ~~ */
+ul, ol, dl { /* En raison des variations entre les navigateurs, il est conseillé d'attribuer une valeur de zéro aux marges intérieures et aux marges des listes. A des fins de cohérence, vous pouvez définir les valeurs désirées dans cette zone ou dans les éléments de liste (LI, DT, DD) qu'elle contient. N'oubliez pas que les paramètres que vous définissez ici se répercuteront sur la liste .nav, sauf si vous rédigez un sélecteur plus spécifique. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* la suppression de la marge supérieure résout un problème où les marges sortent de leur div conteneur. La marge inférieure restante l'éloignera de tout élément qui suit. */
+	padding-right: 15px;
+	padding-left: 15px; /* l'ajout de la marge intérieure aux côtés des éléments à l'intérieur des divs, et non aux divs proprement dit, évite le recours à des calculs de modèle de boîte. Une autre méthode consiste à employer une div imbriquée avec marge intérieure latérale. */
+}
+a img { /* ce sélecteur élimine la bordure bleue par défaut affichée dans certains navigateurs autour d'une image lorsque celle-ci est entourée d'un lien. */
+	border: none;
+}
+
+/* ~~ La définition du style des liens de votre site doit respecter cet ordre, y compris le groupe de sélecteurs qui créent l'effet de survol. ~~ */
+a:link {
+	color:#414958;
+	text-decoration: underline; /* à moins que vous ne définissiez un style particulièrement exclusif pour vos liens, mieux vaut prévoir un soulignement, qui garantit une identification visuelle rapide. */
+}
+a:visited {
+	color: #4E5869;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* ce groupe de sélecteurs offrira à un navigateur au clavier la même expérience de survol que celle d'une personne employant la souris. */
+	text-decoration: none;
+}
+
+/* ~~ ce conteneur entoure toutes les autres divs, en leur attribuant leur largeur sur base d'un pourcentage ~~ */
+.container {
+	width: 80%;
+	max-width: 1260px;/* une valeur « max-width » peut s'avérer utile pour éviter que cette mise en page ne soit trop large sur un moniteur de grande taille. La lisibilité de la longueur de ligne est ainsi améliorée. IE6 ne tient pas compte de cette déclaration. */
+	min-width: 780px;/* une valeur « min-width » peut s'avérer utile pour éviter que cette mise en page ne soit trop étroite. La longueur de ligne est ainsi plus lisible dans les colonnes latérales. IE6 ne tient pas compte de cette déclaration. */
+	background-color: #FFF;
+	margin: 0 auto; /* la valeur automatique sur les côtés, associée à la largeur, permet de centrer la mise en page. Elle n'est pas nécessaire si vous fixez la largeur du conteneur à 100%. */
+}
+
+/* ~~ aucune largeur n'est attribuée à l'en-tête. Il occupera toute la largeur de votre mise en page. Il contient un espace réservé pour une image, qui doit être remplacé par votre logo lié. ~~ */
+.header {
+	background-color: #FFFFFF;
+	text-align:center;
+}
+
+.sidebar1 {
+	float: right;
+	width: 350px;
+	padding-bottom: 10px;
+}
+
+.content {
+	padding: 10px 0;
+	width: 80%;
+		float: right;
+}
+
+/* ~~ Ce sélecteur groupé donne de l'espace aux listes dans la zone .content ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* cette marge intérieure reflète la marge intérieure droite dans les en-têtes et la règle de paragraphe ci-dessus. Une marge intérieure a été placée en bas, afin d'assurer un espace entre les autres éléments des listes, et à gauche pour créer le retrait. Vous pouvez les régler comme bon vous semble. */
+}
+
+
+/* ~~ Pied de page ~~ */
+.footer {
+	padding: 10px 0;
+	background-color: #6F7D94;
+	position: relative;/* donne hasLayout à IE6 de façon à permettre un effacement correct */
+	clear: both; /* cette propriété d'effacement force le .container à comprendre où se terminent les colonnes et à les contenir */
+}
+
+/* ~~ classes flottant/effacement diverses ~~ */
+.fltrt {  /* cette classe peut servir à faire flotter un élément depuis la droite sur votre page. L'élément flottant doit précéder l'élément à côté duquel il doit apparaître sur la page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* cette classe peut servir à faire flotter un élément depuis la gauche sur votre page. L'élément flottant doit précéder l'élément à côté duquel il doit apparaître sur la page. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* cette classe peut être placée sur une div <br /> ou vide, en tant qu'élément final suivant la dernière div flottante (dans le #container) si le paramètre #footer est supprimé ou retiré du #container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+-->
+<!--
+	body {margin:0; padding:0; background:#ddd;}
+	#nav{position:relative; margin:40px; background:#eee; padding:0; font-family:'Lobster', Arial, Helvetica, sans-serif; font-size:21px; -moz-border-radius:5px; -khtml-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:2px 2px 3px #ccc; -webkit-box-shadow:2px 2px 3px #ccc; box-shadow:2px 2px 3px #ccc;}
+	#nav .clear{clear:both;}
+	#nav ul{padding:0 0 0 5px; margin:0; list-style:none;}
+	#nav li{float:left; margin:5px 10px 5px 0; background:#eee; -moz-border-radius:5px; -khtml-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;}
+	#nav li a{text-decoration:none; color:#9e0039; display:block; padding:10px 15px;}
+-->
+</style>
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<!-- rounded corners for IE -->
+<script src="../Templates/DD_roundies_0.0.2a-min.js"></script>
+<script>
+DD_roundies.addRule("#nav", "5px");
+DD_roundies.addRule("#nav li", "5px");
+</script>
+<script>
+$(document).ready(function(){
+	$nav_li=$("#nav li");
+	$nav_li_selected=$("#nav li.selected");
+	$nav_li_a=$nav_li.children("a");
+	var animSpeed=450; //fade speed
+	var hoverTextColor="#fff"; //text color on mouse over
+	var hoverBackgroundColor="#9e0039"; //background color on mouse over
+	var textColor=$nav_li_a.css("color");
+	var backgroundColor=$nav_li.css("background-color");
+	//init selected
+	$nav_li_selected.css("background-color",hoverBackgroundColor).children().css("color",hoverTextColor);
+	$nav_li_a.hover(function() {
+		var $this=$(this);
+		$this.stop().animate({ color: hoverTextColor }, animSpeed).parent().stop().animate({ backgroundColor: hoverBackgroundColor }, animSpeed);
+	},function() {
+		var $this=$(this);
+		if(!$this.parent().is(".selected")){
+			$this.stop().animate({ color: textColor }, animSpeed).parent().stop().animate({ backgroundColor: backgroundColor }, animSpeed);
+		}
+	});
+	//selected state
+	$nav_li_a.click(function(){
+		var $this=$(this);
+		$this.stop().animate({ color: hoverTextColor }, animSpeed).parent().stop().animate({ backgroundColor: hoverBackgroundColor }, animSpeed).addClass("selected").siblings(".selected").removeClass("selected").stop().animate({ backgroundColor: backgroundColor }, animSpeed).children().stop().animate({ color: textColor }, animSpeed);
+	});
+});
+</script>
+</head>
+
+<body>
+
+<div class="container">
+
+  	<header><a href="#"><img src="sauver_titre.gif" alt="Sauver les lettres" name="SauvLettres" width="338px" height="39px" id="logo_SLL" style="background-color: #FFFFFF; display:block;" /></a> 
+	</header>
+    
+	<div id="nav">
+        <ul>
+            <li class="selected"><a href="#about">Reformes / textes officicels</a></li>
+            <li><a href="#portfolio">Nos Analyses</a></li>
+            <li><a href="#recent">Actions</a></li>
+            <li><a href="#experiments">Presse</a></li>
+            <li><a href="#contact">Publications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    <div class="clear"></div>
+    </div>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Blog Post Content Column -->
+            <div class="col-lg-8">
+
+                <!-- Blog Post -->
+
+                <!-- Title -->
+                <h1>Title</h1>
+
+
+
+
+                <!-- Preview Image -->
+                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+
+                <hr>
+
+                <!-- Post Content -->
+                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
+
+                <hr>
+
+                <!-- Blog Comments -->
+
+                <!-- Comments Form -->
+                <div class="well">
+                    <h4>Leave a Comment:</h4>
+                    <form role="form">
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+
+                <hr>
+
+                <!-- Posted Comments -->
+
+                <!-- Comment -->
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="http://placehold.it/64x64" alt="">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading">Start Bootstrap
+                            <small>August 25, 2014 at 9:30 PM</small>
+                        </h4>
+                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    </div>
+                </div>
+
+                <!-- Comment -->
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="http://placehold.it/64x64" alt="">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading">Start Bootstrap
+                            <small>August 25, 2014 at 9:30 PM</small>
+                        </h4>
+                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                        <!-- Nested Comment -->
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="http://placehold.it/64x64" alt="">
+                            </a>
+                            <div class="media-body">
+                                <h4 class="media-heading">Nested Start Bootstrap
+                                    <small>August 25, 2014 at 9:30 PM</small>
+                                </h4>
+                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                            </div>
+                        </div>
+                        <!-- End Nested Comment -->
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+            <div class="col-lg-4">
+
+                <!-- Blog Search Well -->
+                <div class="well">
+                    <h4>Recherche</h4>
+                    <div class="input-group">
+                        <input type="text" class="form-control">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        </span>
+                    </div>
+                    <!-- /.input-group -->
+                </div>
+
+                <!-- Blog Categories Well -->
+                <div class="well">
+                    <h4>Liens</h4>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                </div>
+
+                <!-- Side Widget Well -->
+                <div class="well">
+                    <h4>Perles</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="col-lg-12">
+                  <p>Contact & mentions légales - Adhésion & soutien - Livre d'or - Liens - Membres</p>
+                </div>
+                <p>&nbsp;</p>
+              </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="../Templates/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../Templates/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
