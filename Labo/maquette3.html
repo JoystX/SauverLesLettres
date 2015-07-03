@@ -8,49 +8,31 @@
 
 <title>Sauver Les Lettres</title>
 
+
 <link href="css/bootstrap.css" rel="stylesheet">
-<link href="css/sll.css" rel="stylesheet" type="text/css">
+
+<style type="text/css">
+body {
+	background-color: #fff;
+}
+.container {
+	width: 75%;
+	max-width: 1260px;
+	min-width: 780px;
+	background-color: #fff;
+	margin: 0 auto; /* Centrer */
+}
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
  
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
-<!-- rounded corners for IE -->
-<script src="../Templates/DD_roundies_0.0.2a-min.js"></script>
-<script>
-DD_roundies.addRule("#nav", "5px");
-DD_roundies.addRule("#nav li", "5px");
-</script>
-<script>
-$(document).ready(function(){
-	$nav_li=$("#nav li");
-	$nav_li_selected=$("#nav li.selected");
-	$nav_li_a=$nav_li.children("a");
-	var animSpeed=450; //fade speed
-	var hoverTextColor="#fff"; //text color on mouse over
-	var hoverBackgroundColor="#9e0039"; //background color on mouse over
-	var textColor=$nav_li_a.css("color");
-	var backgroundColor=$nav_li.css("background-color");
-	//init selected
-	$nav_li_selected.css("background-color",hoverBackgroundColor).children().css("color",hoverTextColor);
-	$nav_li_a.hover(function() {
-		var $this=$(this);
-		$this.stop().animate({ color: hoverTextColor }, animSpeed).parent().stop().animate({ backgroundColor: hoverBackgroundColor }, animSpeed);
-	},function() {
-		var $this=$(this);
-		if(!$this.parent().is(".selected")){
-			$this.stop().animate({ color: textColor }, animSpeed).parent().stop().animate({ backgroundColor: backgroundColor }, animSpeed);
-		}
-	});
-	//selected state
-	$nav_li_a.click(function(){
-		var $this=$(this);
-		$this.stop().animate({ color: hoverTextColor }, animSpeed).parent().stop().animate({ backgroundColor: hoverBackgroundColor }, animSpeed).addClass("selected").siblings(".selected").removeClass("selected").stop().animate({ backgroundColor: backgroundColor }, animSpeed).children().stop().animate({ color: textColor }, animSpeed);
-	});
-});
-</script>
 </head>
 
 <body>
@@ -58,27 +40,53 @@ $(document).ready(function(){
 <div class="container">
 
   	<header>
+	<br>
 		<a href="#"><img src="sauver_titre.gif" alt="Sauver les lettres" name="SauvLettres" width="338px" height="39px" id="logo_SLL" style="background-color: #fff; display:block;" /></a> 
+		<br>
 	</header>
     
-	<div id="nav">
-		<ul>
-			<li class="selected"><a href="#accueil">Accueil</a></li>
-			<li><a href="#about">Reformes / textes officicels</a></li>
-			<li><a href="#portfolio">Nos Analyses</a>
-				<ul class="dropdown-menu">
-					<li><a href="#portfolio">Primaire</a></li>
-					<li><a href="#portfolio">Collège</a></li>
-					<li><a href="#portfolio">Lycée</a></li>
-					<li><a href="#portfolio">Supérieur</a></li>					
-				</ul>
-			</li>
-			<li><a href="#recent">Actions</a></li>
+	<div >
+		
+    <nav role="navigation" class="navbar navbar-default navbar-static-top">
+
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Accueil</a></li>
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Reformes / textes officicels<b class="caret"></b></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="#">Primaire</a></li>
+                        <li><a href="#">Collège</a></li>
+                        <li><a href="#">Lycée</a></li>
+                        <li><a href="#">Professionnel</a></li>
+                         <li><a href="#">BTS</a></li>
+                         <li><a href="#">Formations des maîtres</a></li>
+                         <li><a href="#">Rapports</a></li>
+                         <li><a href="#">Etranger, Passé</a></li>
+                    </ul>
+                </li>
+				<li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Nos Analyses <b class="caret"></b></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="#">Primaire</a></li>
+                        <li><a href="#">Collège</a></li>
+                        <li><a href="#">Lycée</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Autres disciplines</a></li>
+                    </ul>
+                </li>
+ 			<li><a href="#recent">Actions</a></li>
 			<li><a href="#experiments">Presse</a></li>
 			<li><a href="#contact">Publications</a></li>
 			<li><a href="#contact">Contact</a></li>
-		</ul>
-		<div class="clear"></div>
+           </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+	
 	</div>
 
 
@@ -106,6 +114,7 @@ $(document).ready(function(){
 				<font color='#CC0066'>&nbsp;<i>A l'heure des examens, nous souhaitons bon courage à tous les membres de jurys ! Nous recueillons toutes les informations sur les épreuves.</i></font>
 				</p>
 
+				<hr>
 				</div>
 				
 				<div class="well">
@@ -187,6 +196,7 @@ $(document).ready(function(){
             <!-- Blog Sidebar Widgets Column -->
             <div class="col-lg-3">
 
+
                 <!-- Blog Search Well -->
                 <div class="well">
                     <h4>Recherche</h4>
@@ -199,6 +209,12 @@ $(document).ready(function(){
                         </span>
                     </div>
                     <!-- /.input-group -->
+                </div>
+
+				<!-- Side Widget Well -->
+                <div class="well">
+                    <h4>Perles</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
                 </div>
 
                 <!-- Blog Categories Well -->
@@ -221,12 +237,6 @@ $(document).ready(function(){
                        </div>
                     </div>
                     <!-- /.row -->
-                </div>
-
-                <!-- Side Widget Well -->
-                <div class="well">
-                    <h4>Perles</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
                 </div>
 
             </div>
