@@ -15,10 +15,13 @@
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+
+
 <!-- rounded corners for IE -->
-<script src="../Templates/DD_roundies_0.0.2a-min.js"></script>
 <script>
 DD_roundies.addRule("#nav", "5px");
 DD_roundies.addRule("#nav li", "5px");
@@ -50,6 +53,26 @@ $(document).ready(function(){
 		$this.stop().animate({ color: hoverTextColor }, animSpeed).parent().stop().animate({ backgroundColor: hoverBackgroundColor }, animSpeed).addClass("selected").siblings(".selected").removeClass("selected").stop().animate({ backgroundColor: backgroundColor }, animSpeed).children().stop().animate({ color: textColor }, animSpeed);
 	});
 });
+
+/* Affichage sous menus déroulants */ 
+$('.dropdown').hover(
+	function() {
+		$(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn();
+	}, 
+	function() {
+		$(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut();
+	}
+);
+
+$('.dropdown-menu').hover(
+	function() {
+		$(this).stop(true, true);
+	},
+	function() {
+		$(this).stop(true, true).delay(200).fadeOut();
+	}
+);
+
 </script>
 </head>
 
@@ -61,18 +84,33 @@ $(document).ready(function(){
 		<a href="#"><img src="sauver_titre.gif" alt="Sauver les lettres" name="SauvLettres" width="338px" height="39px" id="logo_SLL" style="background-color: #fff; display:block;" /></a> 
 	</header>
     
+	
 	<div id="nav">
 		<ul>
 			<li class="selected"><a href="#accueil">Accueil</a></li>
-			<li><a href="#about">Reformes / textes officicels</a></li>
-			<li><a href="#portfolio">Nos Analyses</a>
-				<ul class="dropdown-menu">
-					<li><a href="#portfolio">Primaire</a></li>
-					<li><a href="#portfolio">Collège</a></li>
-					<li><a href="#portfolio">Lycée</a></li>
-					<li><a href="#portfolio">Supérieur</a></li>					
-				</ul>
-			</li>
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Reformes / textes officiels <b class="caret"></b></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="#">Primaire</a></li>
+                        <li><a href="#">Collège</a></li>
+                        <li><a href="#">Lycée</a></li>
+                        <li><a href="#">Professionnel</a></li>
+                        <li><a href="#">BTS</a></li>
+                        <li><a href="#">Formations des maîtres</a></li>
+                        <li><a href="#">Rapports</a></li>
+                        <li><a href="#">Etranger, Passé</a></li>
+                    </ul>
+                </li>
+				<li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Nos Analyses <b class="caret"></b></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="#">Primaire</a></li>
+                        <li><a href="#">Collège</a></li>
+                        <li><a href="#">Lycée</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Autres disciplines</a></li>
+                    </ul>
+                </li>
 			<li><a href="#recent">Actions</a></li>
 			<li><a href="#experiments">Presse</a></li>
 			<li><a href="#contact">Publications</a></li>
@@ -80,6 +118,7 @@ $(document).ready(function(){
 		</ul>
 		<div class="clear"></div>
 	</div>
+	</nav>
 
 
         <div class="row">
@@ -99,11 +138,11 @@ $(document).ready(function(){
                  <!-- Post Content -->
  				
 				<p>
-				<FONT COLOR="#CC0066"><B>·</B>&nbsp;</FONT> <a href="http://www.sauv.net/horaires.php">Appel pour le rétablissement des horaires de français</a>.<br>
-				<FONT COLOR="#CC0066"><B>·</B>&nbsp;</FONT> <a href="http://www.youtube.com/watch?v=Q_uaI28LGJk">Révolution technologique</a>. <br>
-				<FONT COLOR="#CC0066"><B>·</B>&nbsp;</FONT> <a href="http://www.sauv.net/lyceechatel.php">Réforme du lycée et enseignement des lettres</a>.<br>
-				<FONT COLOR="#CC0066"><B>·</B>&nbsp;</FONT> <a href='http://www.sauv.net/eaf2014.php'>Des nouvelles du bac et du brevet</a><br><br>
-				<font color='#CC0066'>&nbsp;<i>A l'heure des examens, nous souhaitons bon courage à tous les membres de jurys ! Nous recueillons toutes les informations sur les épreuves.</i></font>
+				<FONT COLOR="#cc0066"><B>·</B>&nbsp;</FONT> <a href="http://www.sauv.net/horaires.php">Appel pour le rétablissement des horaires de français</a>.<br>
+				<FONT COLOR="#cc0066"><B>·</B>&nbsp;</FONT> <a href="http://www.youtube.com/watch?v=Q_uaI28LGJk">Révolution technologique</a>. <br>
+				<FONT COLOR="#cc0066"><B>·</B>&nbsp;</FONT> <a href="http://www.sauv.net/lyceechatel.php">Réforme du lycée et enseignement des lettres</a>.<br>
+				<FONT COLOR="#cc0066"><B>·</B>&nbsp;</FONT> <a href='http://www.sauv.net/eaf2014.php'>Des nouvelles du bac et du brevet</a><br><br>
+				<font color="#CC0000">&nbsp;<i>A l'heure des examens, nous souhaitons bon courage à tous les membres de jurys ! Nous recueillons toutes les informations sur les épreuves.</i></font>
 				</p>
 
 				</div>
@@ -116,7 +155,7 @@ $(document).ready(function(){
 				
 				<div class="well">
 				<h4>Adhésion & soutien</h4>  
-				<p>Vous pouvez relayer nos actions, nous informer de celles que vous menez ; vous pouvez nous envoyer un texte d'analyse, une contribution, un compte rendu d'ouvrage. <a href="adh.php">Rejoignez-nous</a> ou <a href="adh.php#soutien">soutenez-nous</a>&nbsp;!</p>
+				<p>Vous pouvez relayer nos actions, nous informer de celles que vous menez ; vous pouvez nous envoyer un texte d'analyse, une contribution, un compte rendu d'ouvrage. <a href="adh.php">Rejoignez-nous</a> ou <a href="adh.php#soutien">soutenez-nous !</a></p>
 
 				</div>
 
@@ -138,48 +177,47 @@ $(document).ready(function(){
   
                 <!-- Comment -->
 				<div class="well">
-                <div class="media">
-                    <a class="pull-left" href="#">
-                        <img class="media-object" src="http://placehold.it/64x64" alt="">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading"><a href='https://secure.avaaz.org/fr/petition/Madame_la_Ministre_Latin_et_grec_ancien_pour_tous_les_eleves_dans_tous_les_etablissements/'>Actions / Enseignement du latin et du grec ancien pour tous les élèves, dans tous les établissements.</a> 
-                            <small>(pétition)</small>
-                        </h4>
-                         
-<p><font color='#565656'>À la rentrée 2016, dans un État qui s’inquiète du niveau des élèves en langues, qui prône la réussite pour tous et la diffusion des valeurs humanistes chez le citoyen de demain, le latin et le grec ancien ne seront plus des options proposées aux élèves car elles ne seront même plus des disciplines. Elles deviennent des Enseignements Pratiques Interdisciplinaires (EPI), mises en concurrence avec tous les autres projets de l’établissement, qui aura la charge de faire le « choix » entre ceux-ci, selon les moyens qui lui auront été accordés.
-<br>Concrètement, cela signifie la disparition de l’enseignement des Langues et Cultures de l’Antiquité là où elles sont présentes aujourd’hui, car leur maintien ne tiendra qu’au bon vouloir local, après d’inévitables tensions entre ces disciplines et d’autres nouveaux projets.</font> </p>
+					<div class="media">
+						<a class="pull-left" href="#">
+							<img class="media-object" src="sllp.gif" width="64" height="64" alt="">
+						</a>
+						<div class="media-body">
+							<h4 class="media-heading"><a href='https://secure.avaaz.org/fr/petition/Madame_la_Ministre_Latin_et_grec_ancien_pour_tous_les_eleves_dans_tous_les_etablissements/'>Actions / Enseignement du latin et du grec ancien pour tous les élèves, dans tous les établissements.</a> 
+								<small>(pétition)</small>
+							</h4>
+	<p>À la rentrée 2016, dans un État qui s’inquiète du niveau des élèves en langues, qui prône la réussite pour tous et la diffusion des valeurs humanistes chez le citoyen de demain, le latin et le grec ancien ne seront plus des options proposées aux élèves car elles ne seront même plus des disciplines. Elles deviennent des Enseignements Pratiques Interdisciplinaires (EPI), mises en concurrence avec tous les autres projets de l’établissement, qui aura la charge de faire le « choix » entre ceux-ci, selon les moyens qui lui auront été accordés.
+	<br>Concrètement, cela signifie la disparition de l’enseignement des Langues et Cultures de l’Antiquité là où elles sont présentes aujourd’hui, car leur maintien ne tiendra qu’au bon vouloir local, après d’inévitables tensions entre ces disciplines et d’autres nouveaux projets.</p>
+	
 
-                    </div>
-                </div>
-				
-				<hr>
+						</div>
+					</div>
+					
+					<hr>
 
-                <!-- Comment -->
-                <div class="media">
-                    <a class="pull-left" href="#">
-                        <img class="media-object" src="http://placehold.it/64x64" alt="">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">Start Bootstrap
-                            <small>August 25, 2014 at 9:30 PM</small>
-                        </h4>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                        <!-- Nested Comment -->
-                        <div class="media">
-                            <a class="pull-left" href="#">
-                                <img class="media-object" src="http://placehold.it/64x64" alt="">
-                            </a>
-                            <div class="media-body">
-                                <h4 class="media-heading">Nested Start Bootstrap
-                                    <small>August 25, 2014 at 9:30 PM</small>
-                                </h4>
-                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                            </div>
-                        </div>
-                        <!-- End Nested Comment -->
-                    </div>
-                </div>
+					<div class="media">
+						<a class="pull-left" href="#">
+							<img class="media-object" src="sllp.gif" width="64" height="64"  alt="">
+						</a>
+						<div class="media-body">
+							<h4 class="media-heading"><a href="http://www.sauv.net/AudienceMEN31mars2015.pdf" target="_blank">Actions / Compte rendu de l'audience du 31 mars 2015</a>.
+							</h4>
+							<p></p>
+						</div>
+					</div>
+
+					<hr>
+					
+					<div class="media">
+						<a class="pull-left" href="#">
+							<img class="media-object" src="sllp.gif" width="64" height="64"  alt="">
+						</a>
+						<div class="media-body">
+							<h4 class="media-heading"><a href="http://www.cnarela.fr/ ">Revue de presse sur le site de la Cnarela</a>
+							</h4>
+							<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+						</div>
+					</div>
+					
 				</div>
 
             </div>
@@ -238,8 +276,8 @@ $(document).ready(function(){
         <!-- Footer -->
         <footer>
             <div class="row">
-              <div class="col-lg-12">
-                <p>Contact & mentions légales - Adhésion & soutien - Livre d'or - Liens - Membres</p>
+              <div class="panel-footer" align="center">
+                <p> <a href="contact.php">Contact & mentions légales</a> - <a href="adh.php">Adhésion & soutien</a> - <a href="livre.htm">Livre d'or</a> - <a href="liens.htm">Liens</a> - <a href="col.php">Membres</a></p>
               </div>
             </div>
             <!-- /.row -->
@@ -247,12 +285,6 @@ $(document).ready(function(){
 
     </div>
     <!-- /.container -->
-
-    <!-- jQuery -->
-    <script src="../Templates/js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../Templates/js/bootstrap.min.js"></script>
 
 </body>
 
