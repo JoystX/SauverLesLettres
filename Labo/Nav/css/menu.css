@@ -9,7 +9,7 @@ div.navigation{
 	width : 100%;
 	font : normal 100% Open sans, arial;
 	background-color : #EDEDED;
-	border-top : solid 2px #0D547C;
+	border-top : solid 2px red;
 }
 div.logo{
 	display : inline-block;
@@ -34,7 +34,7 @@ div.nav>ul>li{
 	list-style : none;
 	display : inline-block;
 	height : 50px;
-	color : #494949;
+	color : #777;
 	font-size : 0.96em;
 	background-color : transparent;
 	
@@ -55,8 +55,7 @@ div.nav>ul>li>a{
 }
 div.nav>ul>li:hover{
 	background-color : #DDDDDD;
-	border-bottom : solid 2px #0D547C;
-	color : #0D547C;
+	border-bottom : solid 2px red;
 }
 div.nav>ul>li>ul{
 	position : absolute;
@@ -76,14 +75,14 @@ div.nav>ul>li>ul>li>a{
 	line-height : 40px;
 	margin-left : 5px;
 	text-decoration : none;
-	color : #454545;
+	color :#777;
 	
 	transition: color 0.2s ;
 	-webkit-transition: color 0.2s; /* Safari */
 }
 
 div.nav>ul>li>ul>li>a:hover{
-	color : #0D547C;
+	color :#777;
 	
 	animation : margin_left 0.8s;
 	-moz-animation : margin_left 0.8s;
