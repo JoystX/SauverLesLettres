@@ -9,7 +9,7 @@ div.navigation{
 	width : 100%;
 	font : normal 100% Open sans, arial;
 	background-color : #EDEDED;
-	border-top : solid 2px red;
+	border-top : solid 2px #D90033;
 }
 div.logo{
 	display : inline-block;
@@ -55,13 +55,15 @@ div.nav>ul>li>a{
 }
 div.nav>ul>li:hover{
 	background-color : #DDDDDD;
-	border-bottom : solid 2px red;
+	border-bottom : solid 2px #D90033;
+	color : #333;
 }
 div.nav>ul>li>ul{
 	position : absolute;
 	margin : 0px;
 	padding : 0;
 	display : none;
+	width:100%;
 }
 div.nav>ul>li>ul>li{
 	list-style : none;
@@ -73,7 +75,6 @@ div.nav>ul>li>ul>li{
 div.nav>ul>li>ul>li>a{
 	position : relative;
 	line-height : 40px;
-	margin-left : 5px;
 	text-decoration : none;
 	color :#777;
 	
@@ -82,8 +83,7 @@ div.nav>ul>li>ul>li>a{
 }
 
 div.nav>ul>li>ul>li>a:hover{
-	color :#777;
-	
+	color :#333;
 	animation : margin_left 0.8s;
 	-moz-animation : margin_left 0.8s;
 	-o-animation : margin_left 0.8s;
@@ -93,26 +93,26 @@ div.nav>ul>li>ul>li>a:hover{
 
 @keyframes margin_left
 {
-	0% {margin-left : 10px;}
-	100%{margin-left : 5px;}
+	0% {margin-left : 5px;}
+	100%{margin-left : 0px;}
 }
 
 @-moz-keyframes margin_left /* Firefox */
 {
-	0%{margin-left : 25px;}
-	100%{margin-left : 20px;}
+	0%{margin-left : 5px;}
+	100%{margin-left : 0px;}
 }
 
 @-o-keyframes margin_left /* Opera */
 {
-	0% {margin-left : 25px;}
-	100%{margin-left : 20px;}
+	0% {margin-left : 5px;}
+	100%{margin-left : 0px;}
 }
 
 @-webkit-keyframes margin_left /* Safari & Crome */
 {
-	0% {margin-left : 25px;}
-	100%{margin-left : 20px;}
+	0% {margin-left : 5px;}
+	100%{margin-left : 0px;}
 }
 /** -------------- For Desktop PC-------------------- **/
 @media only screen and (min-width: 960px){
@@ -211,12 +211,6 @@ div.nav>ul>li>ul>li>a:hover{
 	}
 	div.nav>ul>li>ul>li>a{
 		border-left : solid 15px transparent;
-	}
-	div#choose_box{
-		position : relative;
-		display : block;
-		margin-top: 60px; 
-		width : 70%;
 	}
 	div.nav ul li:hover ul{
 	display : block;
